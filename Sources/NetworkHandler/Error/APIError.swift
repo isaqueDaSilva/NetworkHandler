@@ -9,7 +9,7 @@ import Foundation
 
 extension NetworkService {
     /// An representation of the errors that may be occur on a request for the API.
-    enum APIError: Error {
+    public enum APIError: Error {
         
         /// This error is for time when the URL is not valid.
         case badURL
@@ -33,7 +33,7 @@ extension NetworkService {
         
         case noChanges
         
-        var errorDescription: String? {
+        public var errorDescription: String? {
             switch self {
             case .badURL:
                 NSLocalizedString("We are having a problem with this specific endpoint, please try again later or contact us.", comment: "")

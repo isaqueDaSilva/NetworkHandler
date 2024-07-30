@@ -9,7 +9,7 @@ import Foundation
 
 extension NetworkService {
     /// Stores the all HTTP header field used in the App.
-    enum HTTPHeaderField: String {
+    public enum HTTPHeaderField: String {
         case authorization = "Authorization"
         case contentType = "Content-Type"
     }

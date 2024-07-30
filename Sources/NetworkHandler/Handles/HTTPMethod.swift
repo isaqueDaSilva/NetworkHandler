@@ -9,7 +9,7 @@ import Foundation
 
 extension NetworkService {
     /// Stores the all HTTP methods.
-    enum HTTPMethod: String {
+    public enum HTTPMethod: String {
         case get = "GET"
         case post = "POST"
         case patch = "PATCH"
