@@ -8,7 +8,7 @@
 import Foundation
 
 /// A model that represents steps of the the Network Service.
-public struct NetworkService {
+public struct NetworkService: Sendable {
     /// A endpoint that will be use for access the request and gets the data.
     private let endpoint: String
     

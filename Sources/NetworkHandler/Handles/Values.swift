@@ -9,7 +9,7 @@ import Foundation
 
 extension NetworkService {
     /// The representation of the values will be pass for a HTTP header field.
-    public struct Values {
+    public struct Values: Sendable {
         /// The actual value will be send in a HTTP request.
         let value: String
         

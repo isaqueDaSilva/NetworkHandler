@@ -9,7 +9,7 @@ import Foundation
 
 extension NetworkService {
     /// Stores the all use cases what do you expect receive when some request finish.
-    public enum URLSessionType {
+    public enum URLSessionType: Sendable {
         /// Use this case when do you wants get only data for the request.
         case getData
         
