@@ -56,6 +56,7 @@ public struct NetworkService: Sendable {
     
     /// Makes a request in the endpoint.
     /// - Returns: Returns a Data representation and a URLResponse when the request will be finish without error.
+    /// - Parameter urlSession: The `URLSession` type for use to make an request.
     public func run(with urlSession: URLSession = .shared) async throws -> (Data, URLResponse) {
         let request = try makeRequest()
         
