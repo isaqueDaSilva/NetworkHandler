@@ -18,12 +18,15 @@ extension NetworkService {
         
         /// A method that get a URLRequest and return a Data and URLResponse tuple value base on the case selected.
         /// - Returns: Returns a Data and URLResponse tuple value base on the case selected.
-        public func urlSession(for request: URLRequest) async throws -> (Data, URLResponse) {
+        public func makeRequest(
+            with session: URLSession,
+            and request: URLRequest
+        ) async throws -> (Data, URLResponse) {
             switch self {
             case .getData:
-                return try await URLSession.shared.data(for: request)
+                return try await session.data(for: request)
             case .uploadData(let data):
-                return try await URLSession.shared.upload(for: request, from: data)
+                return try await session.upload(for: request, from: data)
             }
         }
     }

@@ -56,10 +56,10 @@ public struct NetworkService: Sendable {
     
     /// Makes a request in the endpoint.
     /// - Returns: Returns a Data representation and a URLResponse when the request will be finish without error.
-    public func run() async throws -> (Data, URLResponse) {
+    public func run(with urlSession: URLSession) async throws -> (Data, URLResponse) {
         let request = try makeRequest()
         
-        guard let (data, response) = try? await type.urlSession(for: request) else {
+        guard let (data, response) = try? await type.makeRequest(with: urlSession ,and: request) else {
             throw APIError.runFailed
         }
         
